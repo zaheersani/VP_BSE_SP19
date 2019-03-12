@@ -35,8 +35,19 @@ namespace WPFApplication
 
         private void BtnPlus_Click(object sender, RoutedEventArgs e)
         {
-            int n1 = int.Parse(this.txtNum1.Text);
-            int n2 = int.Parse(this.txtNum2.Text);
+            int n1 = 0;
+            int n2 = 0;
+            if (!int.TryParse(this.txtNum1.Text, out n1)) {
+                this.txtNum1.Focus();
+                this.txtNum1.SelectAll();
+                MessageBox.Show("Invalid Input");
+            }
+            if (!int.TryParse(this.txtNum2.Text, out n2))
+            {
+                this.txtNum2.Focus();
+                this.txtNum2.SelectAll();
+                MessageBox.Show("Invalid Input");
+            }
             if ( ((Button)sender).Content.ToString() == "+")
                 this.lblResult.Content = (n1 + n2).ToString();
             if (((Button)sender).Content.ToString() == "-")
