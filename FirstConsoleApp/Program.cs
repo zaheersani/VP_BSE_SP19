@@ -10,7 +10,22 @@ namespace FirstConsoleApp
     {
         static void Main(string[] args)
         {
-            Program.StructDemo();
+            // Student Class Demo
+            Student sObj = new Student();
+            sObj.FirstName = "Ahmed";
+            sObj.LastName = "Ali";
+            Console.WriteLine(sObj.FirstName + ", " + sObj.LastName);
+
+            // Employee Class Demo
+            Employee eObj = new Employee("Zaheer")
+            {
+                Department = "CS",
+                Designation = "Lecturer"
+            };
+            Console.WriteLine("Employee Name: " + eObj.Name);
+
+
+            //Program.StructDemo();
             Console.ReadKey();
         }
 
