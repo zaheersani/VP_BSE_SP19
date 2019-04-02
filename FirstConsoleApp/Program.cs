@@ -10,20 +10,21 @@ namespace FirstConsoleApp
     {
         static void Main(string[] args)
         {
-            // Student Class Demo
-            Student sObj = new Student();
-            sObj.FirstName = "Ahmed";
-            sObj.LastName = "Ali";
-            Console.WriteLine(sObj.FirstName + ", " + sObj.LastName);
+            // Inheritance Demo
+            Student sObj = new Student("Ahmed", "Raza", "SP12-BCS-098");
+            Employee eObj = new Employee("Zaheer", "Sani", "Lecturer", "CS");
 
-            // Employee Class Demo
-            Employee eObj = new Employee("Zaheer")
-            {
-                Department = "CS",
-                Designation = "Lecturer"
-            };
-            Console.WriteLine("Employee Name: " + eObj.Name);
+            Person pObj = new Student("Person", "Student", "SP12-BCS-098");
+            Person pObj2 = new Employee("Person", "Employee", "Lecturer", "CS");
 
+            if (sObj.isEqual(sObj))
+                Console.WriteLine("Both are equal");
+
+            Console.WriteLine(pObj.toString());
+            Console.WriteLine(pObj2.toString());
+            Console.WriteLine();
+            Console.WriteLine(sObj.toString());
+            Console.WriteLine(eObj.toString());
 
             //Program.StructDemo();
             Console.ReadKey();
