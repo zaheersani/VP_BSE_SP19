@@ -10,31 +10,28 @@ namespace FirstConsoleApp
     {
         static void Main(string[] args)
         {
-            //Phone Book Demo
-            PhoneBook phoneBook = new PhoneBook();
-            phoneBook.AddContact(new Contact()
+            // Operator Overloading Demo
+            Box b1 = new Box()
             {
-                Name = "Ali",
-                Number = "0345768976"
-            });
-            phoneBook.AddContact(new Contact()
+                Breadth = 5,
+                Height = 5,
+                Length = 5
+            };
+            Box b2 = new Box()
             {
-                Name = "Raza",
-                Number = "0333454"
-            });
-            Console.WriteLine(phoneBook.GetContact(0).Name);
-            Console.WriteLine(phoneBook[0].Name);
-
-            phoneBook[0] = new Contact()
-            {
-                Name = "Ali Hassan",
-                Number = "+92343434343"
+                Breadth = 15,
+                Height = 15,
+                Length = 15
             };
 
-            Console.WriteLine(phoneBook[0].Name);
-            Console.WriteLine(phoneBook["Ali"].Number);
+            if (b1 > b2)
+            {
+                Console.WriteLine("Box1 is Greater than Box2");
+            } else
+            {
+                Console.WriteLine("Box1 is Smaller than Box2");
+            }
 
-            Console.WriteLine(phoneBook["0333", ContactType.Number].Name);
 
             Console.ReadKey();
         }
