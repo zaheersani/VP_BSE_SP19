@@ -10,23 +10,32 @@ namespace FirstConsoleApp
     {
         static void Main(string[] args)
         {
-            // Inheritance Demo
-            Student sObj = new Student("Ahmed", "Raza", "SP12-BCS-098");
-            Employee eObj = new Employee("Zaheer", "Sani", "Lecturer", "CS");
+            //Phone Book Demo
+            PhoneBook phoneBook = new PhoneBook();
+            phoneBook.AddContact(new Contact()
+            {
+                Name = "Ali",
+                Number = "0345768976"
+            });
+            phoneBook.AddContact(new Contact()
+            {
+                Name = "Raza",
+                Number = "0333454"
+            });
+            Console.WriteLine(phoneBook.GetContact(0).Name);
+            Console.WriteLine(phoneBook[0].Name);
 
-            Person pObj = new Student("Person", "Student", "SP12-BCS-098");
-            Person pObj2 = new Employee("Person", "Employee", "Lecturer", "CS");
+            phoneBook[0] = new Contact()
+            {
+                Name = "Ali Hassan",
+                Number = "+92343434343"
+            };
 
-            if (sObj.isEqual(sObj))
-                Console.WriteLine("Both are equal");
+            Console.WriteLine(phoneBook[0].Name);
+            Console.WriteLine(phoneBook["Ali"].Number);
 
-            Console.WriteLine(pObj.toString());
-            Console.WriteLine(pObj2.toString());
-            Console.WriteLine();
-            Console.WriteLine(sObj.toString());
-            Console.WriteLine(eObj.toString());
+            Console.WriteLine(phoneBook["0333", ContactType.Number].Name);
 
-            //Program.StructDemo();
             Console.ReadKey();
         }
 
