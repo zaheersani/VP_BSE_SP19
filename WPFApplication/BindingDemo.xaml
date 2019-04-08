@@ -7,11 +7,8 @@
         mc:Ignorable="d"
         Title="BindingDemo" Height="450" Width="419">
     <Grid>
-        <TextBox x:Name="txtItem" Text="{Binding ElementName=listItems, Path=SelectedItem.Content, Mode=TwoWay}" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="90,40,0,0" FontSize="16"/>
+        <TextBox x:Name="txtItem" Text="{Binding ElementName=listItems, Path=SelectedItem.Name, Mode=TwoWay}" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="90,40,0,0" FontSize="16"/>
         <ListBox x:Name="listItems" HorizontalAlignment="Left" Height="125" VerticalAlignment="Top" Width="120" Margin="90,105,0,0" FontSize="16" SelectionChanged="ListItems_SelectionChanged">
-            <ListBoxItem Content="Item#1"/>
-            <ListBoxItem Content="Item#2"/>
-            <ListBoxItem Content="Item#3"/>
         </ListBox>
         <Button Content="Button" HorizontalAlignment="Left" Margin="215,40,0,0" VerticalAlignment="Top" Width="75" Height="30" Click="Button_Click"/>
 

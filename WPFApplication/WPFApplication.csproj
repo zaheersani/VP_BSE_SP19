@@ -118,5 +118,11 @@
   <ItemGroup>
     <Resource Include="schedule-favicon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FirstConsoleApp\FirstConsoleApp.csproj">
+      <Project>{4200fc2a-0abd-4586-ae5b-126a4a7232d0}</Project>
+      <Name>FirstConsoleApp</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

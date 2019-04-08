@@ -6,15 +6,20 @@ using System.Threading.Tasks;
 
 namespace FirstConsoleApp
 {
-    enum ContactType { Name, Number }
+    public enum ContactType { Name, Number }
 
-    class PhoneBook
+    public class PhoneBook
     {
         private List<Contact> cList = new List<Contact>();
 
         public void AddContact(Contact contact)
         {
             cList.Add(contact);
+        }
+
+        public List<Contact> GetAllContacts()
+        {
+            return this.cList;
         }
 
         public Contact GetContact(int index)
@@ -59,9 +64,14 @@ namespace FirstConsoleApp
         }
 
     }
-    class Contact
+    public class Contact
     {
         public string Name { get; set; }
         public string Number { get; set; }
+
+        public override string ToString()
+        {
+            return this.Name + ", " + this.Number;
+        }
     }
 }
