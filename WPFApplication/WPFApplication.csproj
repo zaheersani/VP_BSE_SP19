@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="BindingDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CalculatorDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -70,6 +74,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BindingDemo.xaml.cs">
+      <DependentUpon>BindingDemo.xaml</DependentUpon>
     </Compile>
     <Compile Include="CalculatorDemo.xaml.cs">
       <DependentUpon>CalculatorDemo.xaml</DependentUpon>
