@@ -68,6 +68,15 @@ namespace FirstConsoleApp
     {
         public string Name { get; set; }
         public string Number { get; set; }
+        public string NameAndNumber
+        {
+            get
+            {
+                if (Number == null)
+                    return Name;
+                return Name + "(" + Number + ")";
+            }
+        }
 
         public override string ToString()
         {

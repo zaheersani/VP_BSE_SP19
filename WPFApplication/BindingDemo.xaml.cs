@@ -40,6 +40,21 @@ namespace WPFApplication
             });
 
             this.listItems.ItemsSource = pb.GetAllContacts();
+
+            // template list
+            this.listTemplate.Items.Add(new Contact()
+            {
+                Name = "Alpha",
+                Number = "+9232323232"
+            });
+            this.listTemplate.Items.Add(new Contact()
+            {
+                Name = "Bravo"
+            });
+
+            //this.listTemplate.Items.Clear();
+            //this.listTemplate.ItemsSource = pb.GetAllContacts();
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

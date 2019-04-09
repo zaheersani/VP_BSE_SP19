@@ -8,9 +8,20 @@
         Title="BindingDemo" Height="450" Width="419">
     <Grid>
         <TextBox x:Name="txtItem" Text="{Binding ElementName=listItems, Path=SelectedItem.Name, Mode=TwoWay}" HorizontalAlignment="Left" Height="30" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="90,40,0,0" FontSize="16"/>
-        <ListBox x:Name="listItems" HorizontalAlignment="Left" Height="125" VerticalAlignment="Top" Width="120" Margin="90,105,0,0" FontSize="16" SelectionChanged="ListItems_SelectionChanged">
+        <ListBox x:Name="listItems" HorizontalAlignment="Left" Height="125" VerticalAlignment="Top" Width="200" Margin="90,105,0,0" FontSize="16" SelectionChanged="ListItems_SelectionChanged">
         </ListBox>
         <Button Content="Button" HorizontalAlignment="Left" Margin="215,40,0,0" VerticalAlignment="Top" Width="75" Height="30" Click="Button_Click"/>
+        <ListBox x:Name="listTemplate" HorizontalAlignment="Left" Height="135" Margin="90,260,0,0" VerticalAlignment="Top" Width="230" ItemTemplate="{DynamicResource TemplateContact}">
+            <ListBox.Resources>
+                <DataTemplate x:Key="TemplateContact">
+                    <Grid Height="50" Width="190">
+                        <Label Content="{Binding NameAndNumber}" HorizontalAlignment="Left" Margin="55,0,0,0" VerticalAlignment="Top" Width="135" FontWeight="Bold" HorizontalContentAlignment="Right" Height="24"/>
+                        <Label Content="{Binding Number}" HorizontalAlignment="Left" Margin="55,24,0,0" VerticalAlignment="Top" Width="135" HorizontalContentAlignment="Right" FontStyle="Italic" FontSize="10" Height="26"/>
+                        <Image HorizontalAlignment="Left" Height="50" VerticalAlignment="Top" Width="55" Source="schedule-favicon.png"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.Resources>
+        </ListBox>
 
     </Grid>
 </Window>
