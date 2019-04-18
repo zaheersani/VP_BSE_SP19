@@ -58,6 +58,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BackgroundWorkerDemo.xaml.cs">
+      <DependentUpon>BackgroundWorkerDemo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DebuggingAndMenus.xaml.cs">
       <DependentUpon>DebuggingAndMenus.xaml</DependentUpon>
     </Compile>
@@ -67,6 +70,10 @@
     <Compile Include="WPFSettings.xaml.cs">
       <DependentUpon>WPFSettings.xaml</DependentUpon>
     </Compile>
+    <Page Include="BackgroundWorkerDemo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="BindingDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
