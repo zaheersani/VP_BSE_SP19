@@ -9,6 +9,7 @@
     <Grid>
         <Button x:Name="btnStart" FontSize="24" Content="Start" HorizontalAlignment="Left" Margin="60,85,0,0" VerticalAlignment="Top" Width="75" Click="BtnStart_Click"/>
         <Label x:Name="lblCounter" FontSize="24" HorizontalContentAlignment="Center" Content="0" HorizontalAlignment="Left" Margin="60,23,0,0" VerticalAlignment="Top" Width="75"/>
+        <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Height="19" Margin="0,150,0,0" VerticalAlignment="Top" Width="192"/>
 
     </Grid>
 </Window>

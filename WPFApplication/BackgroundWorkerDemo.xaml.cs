@@ -50,12 +50,14 @@ namespace WPFApplication
         private void BgWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             this.lblCounter.Content = e.ProgressPercentage;
+            this.progressBar.Value = (e.ProgressPercentage/(double)n)*100;
         }
 
         private int i = 1;
+        private int n = 70;
         private void BgWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            for ( ; i <= 50; i++)
+            for ( ; i <= n; i++)
             {
                 System.Threading.Thread.Sleep(100);
                 this.bgWorker.ReportProgress(i);
