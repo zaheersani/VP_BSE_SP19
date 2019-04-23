@@ -10,28 +10,50 @@ namespace FirstConsoleApp
     {
         static void Main(string[] args)
         {
-            // Operator Overloading Demo
-            Box b1 = new Box()
+            // LINQ Demo
+            int[] nums = new int[] { 2, 3, 2, 62, 3, 445, 45, 45, 4, 34, 67, 6, 46, 46, 67, 99 };
+            var result = from n in nums
+                         where n % 2 == 0
+                         select n;
+            Console.WriteLine("Max int: " + result.Max());
+            Console.WriteLine("Min int: " + result.Min());
+            Console.WriteLine("Average of ints: " + result.Average());
+            foreach (int item in result)
             {
-                Breadth = 5,
-                Height = 5,
-                Length = 5
-            };
-            Box b2 = new Box()
-            {
-                Breadth = 15,
-                Height = 15,
-                Length = 15
-            };
-
-            if (b1 > b2)
-            {
-                Console.WriteLine("Box1 is Greater than Box2");
-            } else
-            {
-                Console.WriteLine("Box1 is Smaller than Box2");
+                Console.WriteLine(item);
             }
 
+            string[] names = new string[] { "Ali", "Sarfraz", "Lodhi", "Ahmed" };
+            var r = from n in names
+                    where n.Length > 3 && n.ToLower().StartsWith("s")
+                    select n;
+            foreach (var item in r)
+            {
+                Console.WriteLine(item);
+            }
+
+            List<Student> sObjs = new List<Student>();
+            sObjs.Add(new Student("Ali", "Hassan", "SP16-BSE-034"));
+            sObjs.Add(new Student("Sarfraz", "Ahmed", "SP16-BSE-054"));
+            sObjs.Add(new Student("Zafar", "Salman", "SP16-BSE-004"));
+
+            IEnumerable<Student> sResult = from student in sObjs
+                                           where student.FirstName.StartsWith("Ali")
+                                           select student;
+
+            
+            foreach (Student item in sResult)
+            {
+                Console.WriteLine(item);
+            }
+
+            // TODO: Write LINQ statement to filter the results of an int array
+            // based on the criteria:
+            // Return all numbers which are divisible by 5, 7 or 13
+            // and are greater than 100 and less than 1000
+            // Print all Numbers in sorted order
+            // Print average of Numbers
+            // Pring Maximum and Minimum value 
 
             Console.ReadKey();
         }

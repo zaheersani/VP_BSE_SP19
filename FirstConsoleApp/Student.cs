@@ -41,6 +41,11 @@ namespace FirstConsoleApp
             return this.FirstName + " " + this.LastName + " " + this.regno;
         }
 
+        public override string ToString()
+        {
+            return this.toString();
+        }
+
         public bool isEqual(Student student)
         {
             if (this.regno == student.regno)
