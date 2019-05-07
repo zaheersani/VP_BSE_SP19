@@ -14,6 +14,21 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -38,8 +53,17 @@
     <ApplicationIcon>LED.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -64,6 +88,27 @@
     <Compile Include="DebuggingAndMenus.xaml.cs">
       <DependentUpon>DebuggingAndMenus.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Doctor.cs">
+      <DependentUpon>HMS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF_Basics.xaml.cs">
+      <DependentUpon>EF_Basics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HMS_Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMS_Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HMS_Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMS_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HMS_Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HMS_Model.edmx</DependentUpon>
+    </Compile>
     <Compile Include="WPFContainers.xaml.cs">
       <DependentUpon>WPFContainers.xaml</DependentUpon>
     </Compile>
@@ -87,6 +132,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DebuggingAndMenus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EF_Basics.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -138,6 +187,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="HMS_Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HMS_Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="HMS_Model.edmx.diagram">
+      <DependentUpon>HMS_Model.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -160,6 +217,40 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="LED.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HMS_Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>HMS_Model.Context.cs</LastGenOutput>
+      <DependentUpon>HMS_Model.edmx</DependentUpon>
+    </Content>
+    <Content Include="HMS_Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HMS_Model.edmx</DependentUpon>
+      <LastGenOutput>HMS_Model.cs</LastGenOutput>
+    </Content>
+    <Content Include="HospitalDB.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="HospitalDB_log.ldf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>HospitalDB.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

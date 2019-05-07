@@ -1,0 +1,21 @@
+﻿<Window x:Class="WPFApplication.EF_Basics"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApplication"
+        mc:Ignorable="d"
+        Title="EF_Basics" Height="450" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dataGridDocs" HorizontalAlignment="Left" Height="160" VerticalAlignment="Top" Width="392"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="120,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="120,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="35,180,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Right"/>
+        <Label Content="Specialization:" HorizontalAlignment="Left" Margin="35,206,0,0" VerticalAlignment="Top" Width="85" HorizontalContentAlignment="Right"/>
+        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="245,206,0,0" VerticalAlignment="Top" Width="40" Click="BtnAdd_Click"/>
+
+    </Grid>
+</Window>
