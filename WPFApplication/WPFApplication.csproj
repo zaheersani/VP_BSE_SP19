@@ -82,6 +82,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Appointment.cs">
+      <DependentUpon>HMS_Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="BackgroundWorkerDemo.xaml.cs">
       <DependentUpon>BackgroundWorkerDemo.xaml</DependentUpon>
     </Compile>
@@ -93,6 +96,9 @@
     </Compile>
     <Compile Include="EF_Basics.xaml.cs">
       <DependentUpon>EF_Basics.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EF_Joins.xaml.cs">
+      <DependentUpon>EF_Joins.xaml</DependentUpon>
     </Compile>
     <Compile Include="HMS_Model.Context.cs">
       <AutoGen>True</AutoGen>
@@ -136,6 +142,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EF_Basics.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EF_Joins.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

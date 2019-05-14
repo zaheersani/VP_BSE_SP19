@@ -6,6 +6,8 @@
     <edmx:Diagrams>
       <Diagram DiagramId="6f37041dd36a46a6a506096aebae917b" Name="Diagram1">
         <EntityTypeShape EntityType="HospitalDBModel.Doctor" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="HospitalDBModel.Appointment" Width="1.5" PointX="3.125" PointY="0.75" />
+        <AssociationConnector Association="HospitalDBModel.FK_Appointment_Doctor" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
