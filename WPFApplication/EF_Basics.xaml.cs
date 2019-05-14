@@ -24,6 +24,50 @@ namespace WPFApplication
             InitializeComponent();
 
             this.ShowDoctors();
+
+        }
+
+        private void DeleteRecord()
+        {
+            HospitalDBEntities db = new HospitalDBEntities();
+            var r = from d in db.Doctors
+                    where d.Id == 1
+                    select d;
+
+            Doctor doctorObj = r.SingleOrDefault();
+
+            if(doctorObj != null)
+            {
+                db.Doctors.Remove(doctorObj);
+                db.SaveChanges();
+            }
+            else
+            {
+                MessageBox.Show("Doctor does not exist!");
+            }
+        }
+
+        private void UpdateDoctor()
+        {
+            HospitalDBEntities db = new HospitalDBEntities();
+            var r = from d in db.Doctors
+                    where d.Id == 2
+                    select d;
+
+            Doctor doctorObj = r.SingleOrDefault();
+
+            if (doctorObj != null)
+            {
+                doctorObj.Name = "Updated Doctor";
+                db.SaveChanges();
+                MessageBox.Show("Record updated!");
+                this.ShowDoctors();
+            }
+            else
+            {
+                MessageBox.Show("Doctor does not exist!");
+            }
+
         }
 
         private void ShowDoctors()
@@ -59,6 +103,16 @@ namespace WPFApplication
             MessageBox.Show("New Record added!");
 
             this.dataGridDocs.ItemsSource = db.Doctors.ToList();
+        }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            this.DeleteRecord();
+        }
+
+        private void BtnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            this.UpdateDoctor();
         }
     }
 }

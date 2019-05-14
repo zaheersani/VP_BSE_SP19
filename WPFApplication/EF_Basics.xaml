@@ -16,6 +16,8 @@
         <Label Content="Name:" HorizontalAlignment="Left" Margin="35,180,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Right"/>
         <Label Content="Specialization:" HorizontalAlignment="Left" Margin="35,206,0,0" VerticalAlignment="Top" Width="85" HorizontalContentAlignment="Right"/>
         <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="245,206,0,0" VerticalAlignment="Top" Width="40" Click="BtnAdd_Click"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Margin="35,260,0,0" VerticalAlignment="Top" Width="40" Click="BtnDelete_Click"/>
+        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Margin="85,260,0,0" VerticalAlignment="Top" Width="55" Click="BtnUpdate_Click"/>
 
     </Grid>
 </Window>
