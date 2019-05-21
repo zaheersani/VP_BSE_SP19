@@ -1,0 +1,26 @@
+﻿@model WebApp.Models.FYP
+
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add</h2>
+
+<h3 class="alert success">@ViewBag.Msg</h3>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.Title)
+    <p>
+        @Html.EditorFor(m => m.Title)
+    </p>
+    @Html.LabelFor(m => m.Members)
+    <p>
+        @Html.EditorFor(m => m.Members)
+    </p>
+    @Html.LabelFor(m => m.Description)
+    <p>
+        @Html.EditorFor(m => m.Description)
+    </p>
+    <input type="submit" value="Create" class="btn btn-default" />
+}
