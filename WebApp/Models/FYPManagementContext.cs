@@ -20,5 +20,11 @@ namespace WebApp.Models
         }
 
         public System.Data.Entity.DbSet<WebApp.Models.Supervisor> Supervisors { get; set; }
+
+        public System.Data.Entity.DbSet<WebApp.Models.FYP> FYPs { get; set; }
+
+        public System.Data.Entity.DbSet<WebApp.Models.Course> Courses { get; set; }
+
+        public System.Data.Entity.DbSet<WebApp.Models.FacultyCourse> FacultyCourses { get; set; }
     }
 }

@@ -55,6 +55,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -132,7 +134,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CoursesController.cs" />
+    <Compile Include="Controllers\FacultyCoursesController.cs" />
     <Compile Include="Controllers\FYPController.cs" />
+    <Compile Include="Controllers\FYPsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SupervisorsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -149,6 +154,18 @@
     <Compile Include="Migrations\201905270843316_Name is Required.cs" />
     <Compile Include="Migrations\201905270843316_Name is Required.Designer.cs">
       <DependentUpon>201905270843316_Name is Required.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905300619566_FYP model added.cs" />
+    <Compile Include="Migrations\201905300619566_FYP model added.Designer.cs">
+      <DependentUpon>201905300619566_FYP model added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905300630148_FYP Relationship added.cs" />
+    <Compile Include="Migrations\201905300630148_FYP Relationship added.Designer.cs">
+      <DependentUpon>201905300630148_FYP Relationship added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905300641314_FacultyCourses Added.cs" />
+    <Compile Include="Migrations\201905300641314_FacultyCourses Added.Designer.cs">
+      <DependentUpon>201905300641314_FacultyCourses Added.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\FYP.cs" />
@@ -200,6 +217,21 @@
     <Content Include="Views\Supervisors\Details.cshtml" />
     <Content Include="Views\Supervisors\Edit.cshtml" />
     <Content Include="Views\Supervisors\Index.cshtml" />
+    <Content Include="Views\FYPs\Create.cshtml" />
+    <Content Include="Views\FYPs\Delete.cshtml" />
+    <Content Include="Views\FYPs\Details.cshtml" />
+    <Content Include="Views\FYPs\Edit.cshtml" />
+    <Content Include="Views\FYPs\Index.cshtml" />
+    <Content Include="Views\Courses\Create.cshtml" />
+    <Content Include="Views\Courses\Delete.cshtml" />
+    <Content Include="Views\Courses\Details.cshtml" />
+    <Content Include="Views\Courses\Edit.cshtml" />
+    <Content Include="Views\Courses\Index.cshtml" />
+    <Content Include="Views\FacultyCourses\Create.cshtml" />
+    <Content Include="Views\FacultyCourses\Delete.cshtml" />
+    <Content Include="Views\FacultyCourses\Details.cshtml" />
+    <Content Include="Views\FacultyCourses\Edit.cshtml" />
+    <Content Include="Views\FacultyCourses\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -227,6 +259,18 @@
     <EmbeddedResource Include="Migrations\201905270843316_Name is Required.resx">
       <DependentUpon>201905270843316_Name is Required.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905300619566_FYP model added.resx">
+      <DependentUpon>201905300619566_FYP model added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905300630148_FYP Relationship added.resx">
+      <DependentUpon>201905300630148_FYP Relationship added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905300641314_FacultyCourses Added.resx">
+      <DependentUpon>201905300641314_FacultyCourses Added.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
