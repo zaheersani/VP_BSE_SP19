@@ -146,6 +146,7 @@
     <Compile Include="Models\Doctor.cs">
       <DependentUpon>ModelHMS.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MetaDataClasses.cs" />
     <Compile Include="Models\ModelHMS.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

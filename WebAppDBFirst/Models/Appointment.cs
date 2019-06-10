@@ -11,18 +11,13 @@ namespace WebAppDBFirst.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Appointment
     {
         public int id { get; set; }
-        [Display(Name ="Doctor")]
         public Nullable<int> doctorID { get; set; }
-        [Display(Name = "Patient")]
         public Nullable<int> patentID { get; set; }
-        [DataType(DataType.Date)]
         public Nullable<System.DateTime> AppointmentDate { get; set; }
-        [DataType(DataType.Time)]
         public Nullable<System.TimeSpan> AppointmentTime { get; set; }
     
         public virtual Doctor Doctor { get; set; }
